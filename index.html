@@ -3,63 +3,56 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <!-- Primary Meta Tags -->
-  <meta name="title" content="Robust Real-Time Surgical Scene Reconstruction via Adaptation of a 3D Foundation Model with SLAM System">
-  <meta name="description" content="Novel pipeline that adapts a 3D foundation model MASt3R for surgical scene mapping, addressing photometric consistency violations in textureless biological tissues through LoRA fine-tuning.">
-  <meta name="keywords" content="3D Reconstruction, depth estimation, LoRA, surgical scene, medical SLAM, MASt3R, Vision Transformers, ICMR 2026">
-  <meta name="author" content="Anonymous Authors">
+  <meta name="title" content="SurgFM-SLAM: Robust Surgical Scene Reconstruction via 3D Foundation Adaptation Model">
+  <meta name="description" content="SurgFM-SLAM: an end-to-end framework that couples a 3D foundation model with SLAM for robust surgical scene reconstruction. Frame-similarity sampling and LoRA-based fine-tuning mine geometric priors for depth, pose, and dense 3D reconstruction.">
+  <meta name="keywords" content="Surgical Scene Reconstruction, 3D Foundation Model, Depth and Pose Estimation, SurgFM-SLAM, LoRA, MASt3R, SLAM, Endoscopy">
+  <meta name="author" content="Xiaoxi Lu, Gan Liu, Bingwen Dong, Guangcheng Chen, Mingdao Gong, Yan Hu, Xiaoqing Zhang, Jiang Liu">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
-  
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
-  <!-- TODO: Replace with your institution or lab name -->
-  <meta property="og:site_name" content="Anonymous Research Lab">
-  <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="SurgMASt3R-SLAM: Medical Scene Reconstruction using SLAM">
-  <!-- TODO: Same as description above -->
-  <meta property="og:description" content="Novel pipeline that adapts a 3D foundation model MASt3R for surgical scene mapping, addressing photometric consistency violations in textureless biological tissues through LoRA fine-tuning">
-  <!-- TODO: Replace with your actual website URL -->
-  <meta property="og:url" content="#">
-  <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="#">
+  <meta property="og:site_name" content="SurgFM-SLAM Project Page">
+  <meta property="og:title" content="SurgFM-SLAM: Robust Surgical Scene Reconstruction via 3D Foundation Adaptation Model">
+  <meta property="og:description" content="An end-to-end framework that couples a 3D foundation model with SLAM for robust surgical scene reconstruction.">
+  <meta property="og:url" content="https://gumlau.github.io/SurgFM-SLAM/">
+  <meta property="og:image" content="static/images/SurgFM-SLAM.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="SurgMASt3R-SLAM - Research Preview">
-  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="Anonymous Authors">
+  <meta property="og:image:alt" content="SurgFM-SLAM Pipeline Overview">
+  <meta property="article:published_time" content="2026-05-19T00:00:00.000Z">
+  <meta property="article:author" content="Xiaoxi Lu, Gan Liu, Bingwen Dong, Guangcheng Chen, Mingdao Gong, Yan Hu, Xiaoqing Zhang, Jiang Liu">
   <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
+  <meta property="article:tag" content="Surgical Scene Reconstruction">
+  <meta property="article:tag" content="3D Foundation Model">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <!-- TODO: Replace with your lab/institution Twitter handle -->
-  <meta name="twitter:site" content="#">
-  <!-- TODO: Replace with first author's Twitter handle -->
-  <meta name="twitter:creator" content="#">
-  <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="SurgMASt3R-SLAM: Medical Scene Reconstruction using SLAM">
-  <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="Novel pipeline that adapts a 3D foundation model MASt3R for surgical scene mapping, addressing photometric consistency violations in textureless biological tissues through LoRA fine-tuning">
-  <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="#">
-  <meta name="twitter:image:alt" content="SurgMASt3R-SLAM - Research Preview">
+  <meta name="twitter:title" content="SurgFM-SLAM: Robust Surgical Scene Reconstruction via 3D Foundation Adaptation Model">
+  <meta name="twitter:description" content="An end-to-end framework that couples a 3D foundation model with SLAM for robust surgical scene reconstruction.">
+  <meta name="twitter:image" content="static/images/SurgFM-SLAM.png">
+  <meta name="twitter:image:alt" content="SurgFM-SLAM Pipeline Overview">
 
   <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="SurgMASt3R-SLAM: Medical Scene Reconstruction using SLAM">
-  <meta name="citation_author" content="Anonymous Authors">
-  <meta name="citation_publication_date" content="2024">
-  <meta name="citation_conference_title" content="ICMR 2026">
-  <meta name="citation_pdf_url" content="#">
-  
+  <meta name="citation_title" content="SurgFM-SLAM: Robust Surgical Scene Reconstruction via 3D Foundation Adaptation Model">
+  <meta name="citation_author" content="Lu, Xiaoxi">
+  <meta name="citation_author" content="Liu, Gan">
+  <meta name="citation_author" content="Dong, Bingwen">
+  <meta name="citation_author" content="Chen, Guangcheng">
+  <meta name="citation_author" content="Gong, Mingdao">
+  <meta name="citation_author" content="Hu, Yan">
+  <meta name="citation_author" content="Zhang, Xiaoqing">
+  <meta name="citation_author" content="Liu, Jiang">
+  <meta name="citation_publication_date" content="2026">
+
   <!-- Additional SEO -->
   <meta name="theme-color" content="#2563eb">
   <meta name="msapplication-TileColor" content="#2563eb">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
+
   <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,90 +61,48 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
 
-  <title>Robust Real-Time Surgical Scene Reconstruction via Adaptation of a 3D Foundation Model with SLAM System | ICMR 2026</title>
-  
-  
+  <title>SurgFM-SLAM: Robust Surgical Scene Reconstruction via 3D Foundation Adaptation Model</title>
+
+
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-  
+
   <!-- Essential CSS -->
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  
+
   <!-- VGG-T style fonts -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-  
+
   <!-- Essential JavaScript -->
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script defer src="static/js/index.js"></script>
-  
+
   <!-- Structured Data for Academic Papers -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "SurgMASt3R-SLAM: Medical Scene Reconstruction using SLAM",
-    "description": "Novel pipeline that adapts a 3D foundation model MASt3R for surgical scene mapping, addressing photometric consistency violations in textureless biological tissues through LoRA fine-tuning",
+    "headline": "SurgFM-SLAM: Robust Surgical Scene Reconstruction via 3D Foundation Adaptation Model",
+    "description": "An end-to-end framework that couples a 3D foundation model with SLAM for robust surgical scene reconstruction, using frame-similarity sampling and LoRA-based fine-tuning to mine geometric priors for depth, pose, and dense 3D reconstruction.",
     "author": [
-      {
-        "@type": "Person",
-        "name": "Anonymous Authors",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "Anonymous Research Institution"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "Anonymous Research Institution"
-        }
-      }
+      { "@type": "Person", "name": "Xiaoxi Lu" },
+      { "@type": "Person", "name": "Gan Liu" },
+      { "@type": "Person", "name": "Bingwen Dong" },
+      { "@type": "Person", "name": "Guangcheng Chen" },
+      { "@type": "Person", "name": "Mingdao Gong" },
+      { "@type": "Person", "name": "Yan Hu" },
+      { "@type": "Person", "name": "Xiaoqing Zhang" },
+      { "@type": "Person", "name": "Jiang Liu" }
     ],
-    "datePublished": "2024-01-01",
-    "publisher": {
-      "@type": "Organization",
-      "name": "ICRA 2024"
-    },
-    "url": "#",
-    "image": "#",
-    "keywords": ["surgical scene reconstruction", "medical SLAM", "MASt3R", "3D reconstruction", "computer vision", "medical imaging", "depth estimation"],
-    "abstract": "Surgical scene reconstruction is crucial for applications such as intraoperative navigation and robotic surgery. Most existing methods rely on self-supervised depth estimation via photometric consistency assumption. However, they perform poorly on smooth, textureless biological tissues due to violations of this assumption caused by illumination changes and non-Lambertian reflectance. To address this problem, we propose SurgMASt3R-SLAM, a novel pipeline that adapts a 3D foundation model, MASt3R, for surgical scene mapping. SurgMASt3R-SLAM leverages low-rank adaptation to efficiently finetune MASt3R while reserves the generalization ability for zero-shot reconstruction on unseen data, especially on non-Lambertian surfaces of biological tissues.",
-    "citation": "@article{MedMASt3R2024, title={SurgMASt3R-SLAM: Medical Scene Reconstruction using SLAM}, author={Anonymous Authors}, journal={Under Review}, year={2024}}",
+    "datePublished": "2026",
+    "url": "https://gumlau.github.io/SurgFM-SLAM/",
+    "image": "static/images/SurgFM-SLAM.png",
+    "keywords": ["surgical scene reconstruction", "3D foundation model", "SurgFM-SLAM", "LoRA", "depth estimation", "pose estimation", "SLAM", "endoscopy"],
+    "abstract": "Surgical scene reconstruction is a critical prerequisite for intraoperative navigation in robotic surgery. Although deep neural networks have advanced surgical scene reconstruction, their performance degrades severely when confronted with texture-sparse biological tissues and dynamic illumination changes. To this end, we develop an end-to-end SurgFM-SLAM framework for surgical scene reconstruction by exploring geometric representation priors of pretrained 3D foundation models and SLAM.",
     "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "mainEntity": {
-      "@type": "WebPage",
-      "@id": "#"
-    },
-    "about": [
-      {
-        "@type": "Thing",
-        "name": "Medical Computer Vision"
-      },
-      {
-        "@type": "Thing", 
-        "name": "3D Scene Reconstruction"
-      }
-    ]
-  }
-  </script>
-  
-  <!-- Website/Organization Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Anonymous Research Institution",
-    "url": "#",
-    "logo": "#",
-    "sameAs": [
-      "#",
-      "#"
-    ]
+    "license": "https://creativecommons.org/licenses/by/4.0/"
   }
   </script>
 </head>
@@ -165,23 +116,47 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-4 publication-title" style="font-size: 2rem;">Robust Real-Time Surgical Scene Reconstruction via Adaptation of a 3D Foundation Model with SLAM System</h1>
+            <h1 class="title is-4 publication-title" style="font-size: 2rem;">SurgFM-SLAM: Robust Surgical Scene Reconstruction via 3D Foundation Adaptation Model</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="#">Anonymous Authors</a><sup>1</sup>,
+                Xiaoxi Lu<sup>1,*</sup>,
               </span>
-              &nbsp;&nbsp;&nbsp;
               <span class="author-block">
-                <a href="#">Under Review</a><sup>1</sup>
+                Gan Liu<sup>1,*</sup>,
+              </span>
+              <span class="author-block">
+                Bingwen Dong<sup>1,*</sup>,
+              </span>
+              <span class="author-block">
+                Guangcheng Chen<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Mingdao Gong<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Yan Hu<sup>2</sup>,
+              </span>
+              <br>
+              <span class="author-block">
+                Xiaoqing Zhang<sup>3,1,&dagger;</sup>,
+              </span>
+              <span class="author-block">
+                Jiang Liu<sup>1,4,5,&dagger;</sup>
               </span>
             </div>
 
-            <div class="is-size-5 publication-authors" style="margin-bottom: 10px;">
-              <span class="author-block" style="margin-right: 10px;"><sup>1</sup>Anonymous Institution,</span>
-              <span class="author-block">ICMR 2026 Submission</span>
+            <div class="is-size-6 publication-authors" style="margin-bottom: 10px; margin-top: 8px;">
+              <span class="author-block"><sup>1</sup>Southern University of Science and Technology &nbsp;</span>
+              <span class="author-block"><sup>2</sup>Chinese Academy of Sciences, Nanjing &nbsp;</span>
+              <br>
+              <span class="author-block"><sup>3</sup>Shenzhen Institutes of Advanced Technology, CAS &nbsp;</span>
+              <span class="author-block"><sup>4</sup>University of Nottingham Ningbo China &nbsp;</span>
+              <span class="author-block"><sup>5</sup>Changchun University</span>
             </div>
 
-            <h1 style="font-size:24px;font-weight:bold">ICMR 2026 Submission</h1>
+            <div class="is-size-7 publication-authors" style="margin-bottom: 10px; color: #666;">
+              <span class="author-block"><sup>*</sup>Equal contribution &nbsp;&nbsp;<sup>&dagger;</sup>Corresponding authors</span>
+            </div>
 
             <div class="column has-text-centered">
               <div class="publication-links">
@@ -194,11 +169,11 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark is-static" style="cursor: not-allowed; opacity: 0.7;">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
-                    <span>Code</span>
+                    <span>Code (coming after acceptance)</span>
                   </a>
                 </span>
                 <span class="link-block">
@@ -207,14 +182,6 @@
                       <i class="ai ai-arxiv"></i>
                     </span>
                     <span>arXiv</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="#" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-presentation"></i>
-                    </span>
-                    <span>Slides</span>
                   </a>
                 </span>
               </div>
@@ -235,7 +202,7 @@
       border-radius: 4px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     }
-    
+
     .hero.teaser {
       padding-top: 0;
       margin-top: -3rem;
@@ -247,8 +214,8 @@
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <img src="static/images/pipeline2.png" alt="SurgMASt3R-SLAM Pipeline" style="width: 100%; height: auto; display: block;">
-        <h2 class="subtitle" style="text-align: center; margin-top: 1rem; font-size: 0.9rem; color: #666;">SurgMASt3R-SLAM Pipeline. MASt3R is first fine-tuned on the SimCol dataset under supervised paradigm using LoRA and Strategic image pairs selection to adapt to textureless and non-Lambertian reflective surgical scenes. Afterwards, The adapted model is deployed with SLAM system as SurgMASt3R-SLAM to process surgical videos, producing 3D point clouds and camera poses for all keyframes in real time. In the end, depth maps are rendered by the predicted point cloud and camera parameters for quantitative evaluation against other depth estimation methods.</h2>
+        <img src="static/images/SurgFM-SLAM.png" alt="SurgFM-SLAM Pipeline" style="width: 100%; height: auto; display: block;">
+        <h2 class="subtitle" style="text-align: center; margin-top: 1rem; font-size: 0.9rem; color: #666;">Overview of SurgFM-SLAM. Given a monocular surgical video, keyframes and current frames are processed by SurgFM to produce local pointmaps and feature descriptors. The SLAM backend then integrates these geometric priors to reconstruct globally consistent point clouds and recover calibrated camera intrinsics and extrinsics in an end-to-end manner.</h2>
       </div>
     </div>
   </section>
@@ -257,34 +224,41 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column is-full-width has-text-centered">
-          
+
           <h2 class="title is-4" style="font-weight: 700;">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Surgical scene reconstruction is crucial for applications such as intraoperative navigation and robotic surgery. Most existing methods rely on self-supervised depth estimation via the photometric consistency assumption. However, they perform poorly on smooth, textureless biological tissues due to violations of this assumption caused by illumination changes and non-Lambertian reflectance.
+              Surgical scene reconstruction is a critical prerequisite for intraoperative navigation in robotic surgery. Although deep neural networks (DNNs) have advanced surgical scene reconstruction, their performance degrades severely when confronted with texture-sparse biological tissues and dynamic illumination changes.
             </p>
             <p>
-              To address this problem, we propose SurgMASt3R-SLAM, a novel pipeline that adapts a 3D foundation model, MASt3R, for surgical scene reconstruction. To solve the problem of illumination changes, MASt3R firstly apply low-rank adaption to efficiently finetune MASt3R on data with ground-truths while reserves the generalization ability for zero-shot reconstruction on unseen data.
+              To this end, we develop an end-to-end <b>SurgFM-SLAM</b> framework for surgical scene reconstruction by exploring geometric representation priors of pretrained 3D foundation models (FMs) and SLAM. Specifically, we first design a frame-similarity sampling strategy to keep surgical scene consistency among sampled frames, and then develop a surgical foundation model (SurgFM) by employing a low-rank adaptation (LoRA) method to mine 3D strong structural geometry representations from 3D FMs with the aid of parameter-efficient finetuning techniques, aiming to effectively capture dynamic illumination conditions and informative textures from surgical environments.
             </p>
             <p>
-              To improve fine-tuning efficiency, we propose to select frame pairs in sliding windows to ensure sufficient visual overlap, addressing the challenge of limited field-of-view and frequent occlusions in surgical scenes. Moreover, the finetuned MASt3R combined with a SLAM system is capable of handling extended surgical video sequences to reconstruct the whole scene that runs at 10 FPS. Experimental results on SimCol and generalization testing on C3VD and SCARED datasets show that SurgMASt3R-SLAM achieves competitive performance in depth estimation, pose estimation, and 3D reconstruction.
+              Finally, we embed SurgFM into the SLAM backend to construct SurgFM-SLAM to perform robust surgical scene reconstruction in an end-to-end manner, including tracking, mapping, and relocalization. Extensive experiments on the SimCol dataset demonstrate that SurgFM-SLAM achieves competitive performance across depth estimation, camera pose estimation, and 3D reconstruction through comparisons to state-of-the-art methods. Additionally, zero-shot generalization tests on the C3VD and SCARED datasets manifest the generalization of SurgFM-SLAM.
             </p>
           </div>
           <br>
 
-<h2 class="title is-4" style="font-weight: 700;">Method</h2>
+          <h2 class="title is-4" style="font-weight: 700;">Method</h2>
           <div class="content has-text-justified">
             <p>
-              In contrast to conventional SSL depth-centric approaches above, our work targets holistic 3D scene reconstruction by leveraging a pre-trained 3D foundation model with a SLAM system in a supervised paradigm. Rather than treating depth estimation in isolation, we treat depth as one attribute within a comprehensive set of scene properties, generating depth after predicting camera parameters and global 3D structure. The whole pipeline is divided into 3 phases:
+              Unlike previous efforts that predominantly rely on photometric or rendering consistency at the image level, we ground depth and pose estimation as integral parts of robust and learned geometric priors. The full pipeline of SurgFM-SLAM consists of three tightly coupled components:
             </p>
             <p>
-              <b>Phase 1: Finetune MASt3R in a supervised paradigm.</b> To effectively adapt this representation to the surgical domain with minimal data, we first employ parameter-efficient fine-tuning via Low-Rank Adaptation (LoRA) to MASt3R using a small amount of surgical data with ground-truths, substantially reducing computational cost and mitigating overfitting. This allows the model to capture characteristic geometric properties of surgical scenes, such as smooth and low-textured tissue surfaces, while preserving the foundation model's strong generalization capability for unseen surgical data. Furthermore, to enhance geometric consistency and data efficiency during fine-tuning, we introduce a strategic image pair selection method that increases image pairs' overlap and reinforces robust learning on challenging tissue surfaces.
+              <b>(1) Frame-similarity sampling strategy.</b> From a temporal sliding window, we select frame pairs with strong visual overlap to provide stable training signals. This ensures that SurgFM learns robust correspondences despite the rapid viewpoint changes, occlusions, and specular highlights typical of endoscopic video.
             </p>
             <p>
-              <b>Phase 2: Combine Finetuned MASt3R with a SLAM system.</b> By integrating the adapted representation into a deep learning-based Simultaneous Localization and Mapping (SLAM) framework, our approach efficiently handles extended surgical video sequences and achieves real-time 3D scene reconstruction. Unlike Structure from Motion (SfM) methods, which also enable global optimization but suffer from low reconstruction speed and are impractical for real-time processing, our SLAM-based solution offers a scalable approach for surgical stationary scene reconstruction, depth, and pose estimation.
+              <b>(2) SurgFM: Surgical Foundation Model.</b> Building on a pre-trained 3D foundation model, SurgFM is adapted to the surgical domain by inserting low-rank adapters (LoRA) into the MLP layers of both encoder and decoder blocks. All backbone weights are kept frozen, while position embeddings, decoder embeddings, and prediction heads are unfrozen to capture illumination-invariant geometric features specific to endoscopic imagery, while preserving zero-shot generalization to unseen surgical data.
             </p>
             <p>
-              <b>Phase 3: Generating depth under the prediction of pose and 3D point cloud.</b> To compare our work with present depth estimation methods quantitatively, we induced depth after estimating the camera parameters and 3D point cloud. By leveraging MASt3R, SurgMASt3R-SLAM is capable of handling both cases with known camera parameters and cases where camera parameters are unknown.
+              <b>(3) SLAM backend integration.</b> The robust two-view priors produced by SurgFM (pointmaps and feature descriptors) are integrated into a deep learning-based SLAM backend, which drives camera tracking, dense mapping, and relocalization. This yields globally consistent reconstructions of extended surgical sequences in real time, while the system supports both known and unknown camera intrinsics.
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <img src="static/images/SurgFM.png" alt="SurgFM Architecture" style="width: 100%; margin-bottom: 1rem;">
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 2rem;">
+              <b>(a)</b> Frame-similarity sampling strategy. From a temporal sliding window, frame pairs with strong visual overlap are selected to provide stable training signals, ensuring SurgFM learns robust correspondences despite viewpoint changes and specular highlights typical of endoscopic video.
+              <b>(b)</b> SurgFM structure. Lightweight low-rank adapters are inserted into the MLP layers of both encoder and decoder blocks; backbone weights are frozen, while position embeddings, decoder embeddings, and prediction heads remain unfrozen.
             </p>
           </div>
           <div class="content has-text-centered">
@@ -292,20 +266,20 @@
               <source src="videos_compressed/B5.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <p class="has-text-centered" style="margin-top: 10px; font-size: 0.9em; color: #666;">SurgMASt3R-SLAM Reconstruction Demo</p>
+            <p class="has-text-centered" style="margin-top: 10px; font-size: 0.9em; color: #666;">SurgFM-SLAM Reconstruction Demo</p>
           </div>
           <br>
 
           <h2 class="title is-4" style="font-weight: 700;">Experimental Results</h2>
           <div class="content has-text-justified">
             <p>
-              We evaluate SurgMASt3R-SLAM on three datasets: <b>SimCol</b> (28,776 training frames, 9,009 test frames), <b>C3VD</b> (22 colonic videos with 8 selected for testing), and <b>SCARED</b> dataset. With intrinsics, SurgMASt3R-SLAM achieves superior depth estimation performance on both SimCol (train and test) and C3VD (zero-shot test) datasets, outperforming other methods across most metrics.
+              We evaluate SurgFM-SLAM on three datasets: <b>SimCol</b> (intra-domain training and evaluation), <b>C3VD</b> (zero-shot evaluation), and <b>SCARED</b> (zero-shot evaluation). With camera intrinsics, SurgFM-SLAM achieves superior depth estimation performance on both SimCol and C3VD, outperforming state-of-the-art baselines across most metrics.
             </p>
             <p>
-              Our method achieves Abs Rel of 0.046 on SimCol and 0.083 on C3VD, demonstrating robust performance in both controlled and unseen settings. The system operates at approximately 10 FPS, delivering high-fidelity 3D reconstructions in real time for practical deployment in surgical environments.
+              Our method achieves an Abs Rel of <b>0.046</b> on SimCol and <b>0.083</b> on C3VD (zero-shot), demonstrating both strong intra-domain accuracy and robust cross-domain generalization. SurgFM-SLAM further delivers the lowest relative pose error on SimCol, while producing dense, structurally coherent 3D reconstructions across all three datasets.
             </p>
           </div>
-          
+
           <div class="content has-text-centered">
             <h3 class="title is-5" style="font-weight: 600; margin-bottom: 1rem;">Quantitative Depth Estimation Results</h3>
             <div style="overflow-x: auto; margin-bottom: 2rem;">
@@ -314,144 +288,84 @@
                   <tr style="background-color: #f5f5f5;">
                     <th rowspan="2" style="vertical-align: middle; text-align: center;">Method</th>
                     <th rowspan="2" style="vertical-align: middle; text-align: center;">C</th>
-                    <th colspan="4" style="text-align: center; border-bottom: 1px solid #ddd;">SimCol (Train & Test)</th>
+                    <th colspan="4" style="text-align: center; border-bottom: 1px solid #ddd;">SimCol (Train &amp; Test)</th>
                     <th colspan="4" style="text-align: center; border-bottom: 1px solid #ddd;">C3VD (Zero-shot)</th>
                   </tr>
                   <tr style="background-color: #f8f9fa; font-size: 0.8rem;">
-                    <th>Abs Rel ↓</th>
-                    <th>Sq Rel ↓</th>
-                    <th>RMSE ↓</th>
-                    <th>δ ↑</th>
-                    <th>Abs Rel ↓</th>
-                    <th>Sq Rel ↓</th>
-                    <th>RMSE ↓</th>
-                    <th>δ ↑</th>
+                    <th>Abs Rel &darr;</th>
+                    <th>Sq Rel &darr;</th>
+                    <th>RMSE &darr;</th>
+                    <th>&sigma; &uarr;</th>
+                    <th>Abs Rel &darr;</th>
+                    <th>Sq Rel &darr;</th>
+                    <th>RMSE &darr;</th>
+                    <th>&sigma; &uarr;</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>Monodepth2</td>
-                    <td style="text-align: center;">✓</td>
-                    <td>0.212</td>
-                    <td>0.995</td>
-                    <td>1.165</td>
-                    <td>0.763</td>
-                    <td>0.170</td>
-                    <td>2.317</td>
-                    <td>9.276</td>
-                    <td>0.769</td>
+                    <td style="text-align: center;">&#10003;</td>
+                    <td>0.212</td><td>0.995</td><td>1.165</td><td>0.763</td>
+                    <td>0.170</td><td>2.317</td><td>9.276</td><td>0.769</td>
                   </tr>
                   <tr>
                     <td>Endo-SfM</td>
-                    <td style="text-align: center;">✓</td>
-                    <td>0.200</td>
-                    <td>0.918</td>
-                    <td>1.127</td>
-                    <td>0.778</td>
-                    <td>0.164</td>
-                    <td>2.232</td>
-                    <td>9.311</td>
-                    <td>0.770</td>
+                    <td style="text-align: center;">&#10003;</td>
+                    <td>0.200</td><td>0.918</td><td>1.127</td><td>0.778</td>
+                    <td>0.164</td><td>2.232</td><td>9.311</td><td>0.770</td>
                   </tr>
                   <tr>
                     <td>Depth-Anything</td>
-                    <td style="text-align: center;">✓</td>
-                    <td>0.273</td>
-                    <td>1.471</td>
-                    <td>1.583</td>
-                    <td>0.732</td>
-                    <td>0.246</td>
-                    <td>6.423</td>
-                    <td>14.501</td>
-                    <td>0.684</td>
+                    <td style="text-align: center;">&#10003;</td>
+                    <td>0.273</td><td>1.471</td><td>1.583</td><td>0.732</td>
+                    <td>0.246</td><td>6.423</td><td>14.501</td><td>0.684</td>
                   </tr>
                   <tr>
                     <td>HR-Depth</td>
-                    <td style="text-align: center;">✓</td>
-                    <td>0.110</td>
-                    <td>0.720</td>
-                    <td>0.570</td>
-                    <td>0.947</td>
-                    <td>0.152</td>
-                    <td>2.102</td>
-                    <td>9.293</td>
-                    <td>0.787</td>
+                    <td style="text-align: center;">&#10003;</td>
+                    <td>0.110</td><td>0.720</td><td>0.570</td><td>0.947</td>
+                    <td>0.152</td><td>2.102</td><td>9.293</td><td>0.787</td>
                   </tr>
                   <tr>
                     <td>MonoViT</td>
-                    <td style="text-align: center;">✓</td>
-                    <td>0.082</td>
-                    <td>0.295</td>
-                    <td>0.576</td>
-                    <td>0.951</td>
-                    <td>0.116</td>
-                    <td>1.014</td>
-                    <td>6.712</td>
-                    <td>0.881</td>
+                    <td style="text-align: center;">&#10003;</td>
+                    <td>0.082</td><td>0.295</td><td>0.576</td><td>0.951</td>
+                    <td>0.116</td><td>1.014</td><td>6.712</td><td>0.881</td>
                   </tr>
                   <tr>
                     <td>Lite-Mono</td>
-                    <td style="text-align: center;">✓</td>
-                    <td>0.133</td>
-                    <td>1.375</td>
-                    <td>0.606</td>
-                    <td>0.954</td>
-                    <td>0.111</td>
-                    <td>0.762</td>
-                    <td>5.474</td>
-                    <td>0.890</td>
+                    <td style="text-align: center;">&#10003;</td>
+                    <td>0.133</td><td>1.375</td><td>0.606</td><td>0.954</td>
+                    <td>0.111</td><td>0.762</td><td>5.474</td><td>0.890</td>
                   </tr>
                   <tr>
                     <td>AF-SfM</td>
-                    <td style="text-align: center;">✓</td>
-                    <td>0.086</td>
-                    <td>0.358</td>
-                    <td>0.585</td>
-                    <td>0.954</td>
-                    <td>0.117</td>
-                    <td>1.324</td>
-                    <td>7.520</td>
-                    <td>0.882</td>
+                    <td style="text-align: center;">&#10003;</td>
+                    <td>0.086</td><td>0.358</td><td>0.585</td><td>0.954</td>
+                    <td>0.117</td><td>1.324</td><td>7.520</td><td>0.882</td>
                   </tr>
                   <tr>
                     <td>EndoDAC</td>
-                    <td style="text-align: center;">✗</td>
-                    <td>0.082</td>
-                    <td>0.287</td>
-                    <td>0.611</td>
-                    <td>0.955</td>
-                    <td><u>0.105</u></td>
-                    <td>0.905</td>
-                    <td>6.180</td>
-                    <td>0.880</td>
+                    <td style="text-align: center;">&#10007;</td>
+                    <td>0.082</td><td>0.287</td><td>0.611</td><td>0.955</td>
+                    <td><u>0.105</u></td><td>0.905</td><td>6.180</td><td>0.880</td>
                   </tr>
                   <tr>
                     <td>EndoDAC</td>
-                    <td style="text-align: center;">✓</td>
-                    <td><u>0.076</u></td>
-                    <td><u>0.266</u></td>
-                    <td><u>0.555</u></td>
-                    <td><u>0.957</u></td>
-                    <td><strong>0.083</strong></td>
-                    <td><strong>0.584</strong></td>
-                    <td><u>4.655</u></td>
-                    <td><u>0.949</u></td>
+                    <td style="text-align: center;">&#10003;</td>
+                    <td><u>0.076</u></td><td><u>0.266</u></td><td><u>0.555</u></td><td><u>0.957</u></td>
+                    <td><strong>0.083</strong></td><td><strong>0.584</strong></td><td><u>4.655</u></td><td><u>0.949</u></td>
                   </tr>
                   <tr>
-                    <td>SurgMASt3R-SLAM</td>
-                    <td style="text-align: center;">✗</td>
-                    <td>0.165</td>
-                    <td>0.622</td>
-                    <td>0.918</td>
-                    <td>0.903</td>
-                    <td>0.188</td>
-                    <td>2.301</td>
-                    <td>5.943</td>
-                    <td>0.848</td>
+                    <td>SurgFM-SLAM</td>
+                    <td style="text-align: center;">&#10007;</td>
+                    <td>0.165</td><td>0.622</td><td>0.918</td><td>0.903</td>
+                    <td>0.188</td><td>2.301</td><td>5.943</td><td>0.848</td>
                   </tr>
                   <tr style="background-color: #e8f5e8; font-weight: bold;">
-                    <td><strong>SurgMASt3R-SLAM</strong></td>
-                    <td style="text-align: center;"><strong>✓</strong></td>
+                    <td><strong>SurgFM-SLAM</strong></td>
+                    <td style="text-align: center;"><strong>&#10003;</strong></td>
                     <td><strong>0.046</strong></td>
                     <td><strong>0.038</strong></td>
                     <td><strong>0.343</strong></td>
@@ -465,23 +379,60 @@
               </table>
             </div>
             <p style="font-size: 0.85rem; color: #666; text-align: center;">
-              <strong>Bold</strong> indicates best performance, <u>underlined</u> indicates second-best performance. 
-              ↓ indicates lower is better, ↑ indicates higher is better. "C" refers to whether the method requires camera intrinsic parameters.
+              <strong>Bold</strong> indicates best performance, <u>underlined</u> indicates second-best performance.
+              &darr; indicates lower is better, &uarr; indicates higher is better. "C" refers to whether the method requires camera intrinsic parameters.
             </p>
           </div>
 
           <div class="content has-text-centered">
-            <h3 class="title is-5" style="font-weight: 600; margin-bottom: 1rem;">MASt3R Architecture with LoRA Adaptation</h3>
-            <img src="static/images/MASt3R2.png" alt="MASt3R Architecture" style="width: 100%; margin-bottom: 2rem;">
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 2rem;">MASt3R architecture fine-tuned with LoRA on MLP layers and strategic image pair selection.</p>
+            <h3 class="title is-5" style="font-weight: 600; margin-bottom: 1rem;">Camera Trajectory Tracking on SimCol</h3>
+            <div style="overflow-x: auto; margin-bottom: 2rem;">
+              <table class="table is-striped is-hoverable" style="margin: 0 auto; font-size: 0.9rem;">
+                <thead>
+                  <tr style="background-color: #f5f5f5;">
+                    <th style="text-align: center;">Method</th>
+                    <th style="text-align: center;">C</th>
+                    <th style="text-align: center;">ATE &darr;</th>
+                    <th style="text-align: center;">RPE &darr;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>MonoViT</td><td style="text-align:center;">&#10003;</td><td>0.0156 &plusmn; 0.0126</td><td>0.0090 &plusmn; 0.0075</td></tr>
+                  <tr><td>Endo-SfM</td><td style="text-align:center;">&#10003;</td><td>0.0154 &plusmn; 0.0121</td><td>0.0078 &plusmn; 0.0077</td></tr>
+                  <tr><td>AF-SfM</td><td style="text-align:center;">&#10003;</td><td>0.0150 &plusmn; 0.0113</td><td>0.0081 &plusmn; 0.0060</td></tr>
+                  <tr><td>HR-Depth</td><td style="text-align:center;">&#10003;</td><td>0.0147 &plusmn; 0.0138</td><td>0.0094 &plusmn; 0.0081</td></tr>
+                  <tr><td>Monodepth2</td><td style="text-align:center;">&#10003;</td><td>0.0146 &plusmn; 0.0129</td><td>0.0092 &plusmn; 0.0074</td></tr>
+                  <tr><td>Lite-Mono</td><td style="text-align:center;">&#10003;</td><td>0.0144 &plusmn; 0.0114</td><td>0.0082 &plusmn; 0.0059</td></tr>
+                  <tr><td>EndoDAC</td><td style="text-align:center;">&#10003;</td><td><strong>0.0143 &plusmn; 0.0112</strong></td><td>0.0079 &plusmn; 0.0053</td></tr>
+                  <tr style="background-color: #e8f5e8; font-weight: bold;">
+                    <td><strong>SurgFM-SLAM</strong></td><td style="text-align:center;"><strong>&#10003;</strong></td>
+                    <td><u>0.0144 &plusmn; 0.0076</u></td>
+                    <td><strong>0.0011 &plusmn; 0.0003</strong></td>
+                  </tr>
+                  <tr style="background-color: #e8f5e8;">
+                    <td><strong>SurgFM-SLAM</strong></td><td style="text-align:center;"><strong>&#10007;</strong></td>
+                    <td>0.0175 &plusmn; 0.0091</td>
+                    <td><u>0.0012 &plusmn; 0.0003</u></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="font-size: 0.85rem; color: #666; text-align: center;">
+              Absolute Trajectory Error (ATE) and Relative Pose Error (RPE) on SimCol. SurgFM-SLAM achieves the lowest RPE, indicating accurate frame-to-frame motion estimation.
+            </p>
+          </div>
 
+          <div class="content has-text-centered">
             <h3 class="title is-5" style="font-weight: 600; margin-bottom: 1rem;">Qualitative Results</h3>
             <div class="thumbnail-container">
               <img src="static/images/Depth2.png" alt="Depth Estimation Results">
               <img src="static/images/reconstruction.png" alt="3D Reconstruction Results">
               <img src="static/images/pose.png" alt="Camera Pose Estimation">
             </div>
-          </div>  
+            <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">
+              Top: depth estimation comparison on SimCol and C3VD. Middle: 3D reconstructions on SimCol, C3VD, and SCARED. Bottom: estimated trajectories with and without intrinsics on SimCol.
+            </p>
+          </div>
           <br>
 
         </div>
@@ -593,11 +544,11 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title is-4" style="font-weight: 700;">BibTeX</h2>
-      <pre><code>@inproceedings{surgmast3rslam2025,
-  title={Robust Real-Time Surgical Scene Reconstruction via Adaptation of a 3D Foundation Model with SLAM System},
-  author={Anonymous Authors},
-  booktitle={Proceedings of the ACM International Conference on Multimedia Retrieval (ICMR)},
-  year={2026}
+      <pre><code>@article{surgfmslam2026,
+  title   = {SurgFM-SLAM: Robust Surgical Scene Reconstruction via 3D Foundation Adaptation Model},
+  author  = {Lu, Xiaoxi and Liu, Gan and Dong, Bingwen and Chen, Guangcheng and Gong, Mingdao and Hu, Yan and Zhang, Xiaoqing and Liu, Jiang},
+  journal = {Under Review},
+  year    = {2026}
 }</code></pre>
     </div>
   </section>
@@ -610,7 +561,7 @@
         <div class="content">
 
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
             You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
@@ -622,7 +573,7 @@
 </footer>
 
 <!-- Statcounter tracking code -->
-  
+
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
     <!-- End of Statcounter Code -->
